@@ -1,15 +1,13 @@
 <?php
+
     class Pages extends Controller{
 
         public function __construct(){
             //  Sets postModel to current model
             //  $this->postModel = $this->model('Post');
 //            $postModel = $this->model('Post');
-//            die($postModel);
         }
 
-        // Reikia kazkaip automatskai sukurt Post objekta
-        // Ir tada pasieks getPosts() metoda
         public function index() {
             // Get the post from DB
 //            $posts = $this->postModel->getPosts();
@@ -29,7 +27,6 @@
             ];
 
             $this->view('pages/about', $data);
-//            $this->view('pages/about', ['Labas', 3]);
         }
 
         public function contact() {

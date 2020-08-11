@@ -1,2 +1,2 @@
 <?php
-echo "Contact page";
+    echo "Contact page";

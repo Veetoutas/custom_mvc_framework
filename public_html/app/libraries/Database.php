@@ -27,7 +27,7 @@
 
             );
 
-            // Create PDO instanse
+            // Create PDO instance
             try {
                 $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
             }

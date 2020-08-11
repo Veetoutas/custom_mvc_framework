@@ -22,5 +22,4 @@ class Controller {
         }
     }
 
-    // Just a commentaaa
 }

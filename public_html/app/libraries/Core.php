@@ -12,7 +12,6 @@
 
         public function __construct() {
             $url = $this->getUrl();
-//            print_r($url[1]);
             // Look in controllers for first value of URL
             if (file_exists(ROOT_DIR . '/app/controllers/' . ucwords($url[0]). '.php')) {
                 // If exists, set it as controller
@@ -22,7 +21,7 @@
             }
 
 
-            // Require the controller :) see ya ! :D
+            // Require the controller
             require_once ROOT_DIR . '/app/controllers/' . $this->currentController . '.php';
             // Instantiate controller class
             $this->currentController = new $this->currentController;
@@ -44,11 +43,7 @@
         }
 
         public function getUrl() {
-            echo '<pre>';
-//            var_dump($_SERVER['HTTP_HOST']);
-//            print_r($_SERVER['REQUEST_URI']);
-            echo '</pre>';
-//            $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+            // $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
             if(isset($_SERVER['REQUEST_URI'])) {
 
             // rtrim() Removes the desired char from the right side
@@ -63,23 +58,3 @@
             };
         }
     }
-
-
-
-/**
- * $_GET parameter ima is url for example http://localhost?url=Mantas
- * $_GET['url'] = Mantas
- * Jeigu nori daryti localhost/page/mantas
- * turi kitaip formuoti url
- * Pagavai? :D
- * Tipo formuoti, kad paciam URL nebutu zodzio url? nugi matai dabar ziurek idemiai
- * Tai cia esme ir buvo, kad jis pasirase hujova url pasiemima? turėjo sita naudot?
- * Nes jis ir raso savo custom tipo funkcijas, kad ta get isdarkyt ir pasiimt tik zodelius - problema buvo del apacho, bet url emimas pas tave padarytas kad butu localhost?url=tavokazkoksurl - cia yra nesamone :D
- * Tai bandyt toliau sita visa kursa daryt geriau su situ $_SERVER? manau
- * O kas tiksliai si apachae buvo nesupratau : ( nebuvo enablintas REWRITE_MODULE :) matei, kad atkomentavau ir pradejo veikti
- * Jo.
- * tai del to module buvo viskas
- * Gali dar karta parodyt ji
- *
- */
-// tu pagal sita darai? Jo cia nepagausi url :)
