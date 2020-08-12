@@ -13,10 +13,4 @@
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>
-    <div id="header">
-        <?php
-        echo '<br>';
-        echo 'Header';
-        echo '<br>';
-        ?>
-    </div>
+

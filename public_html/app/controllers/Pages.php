@@ -12,7 +12,7 @@
             // Get the post from DB
 
             $data = [
-                'title' => 'Home page',
+                'title' => 'Custom MVC framework template',
             ];
             // Pass data from DB to view and show it
             $this->view('pages/index', $data);
