@@ -7,11 +7,11 @@
     // Return row and results
 
     class Database {
-
-        private $host = DB_HOST;
-        private $user = DB_USER;
-        private $pass = DB_PASS;
-        private $dbname = DB_NAME;
+        private $host = 'mysql';
+        private $user = 'root';
+        private $pass = 'rootpassword';
+        private $dbname = 'test1';
+        private $port = '3306';
 
         // Database handler
         private $dbh;
@@ -20,18 +20,20 @@
 
         public function __construct() {
             // Set DSN
-            $dsn = 'mysql:host' . $this->host . ';dbname=' . $this->dbname;
+            $dsn = "mysql:host=$this->host;dbname=$this->dbname;port=$this->port";
             $options = array(
                 PDO::ATTR_PERSISTENT => true,
                 PDO::ATTR_ERRMODE => PDO:: ERRMODE_EXCEPTION,
 
             );
-
             // Create PDO instance
             try {
                 $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
             }
             catch(PDOException $e) {
+                var_dump($e->getMessage());
+                var_dump($e->getCode());
+                die;
                 $this->error = $e->getMessage();
                 echo $this->error;
             }

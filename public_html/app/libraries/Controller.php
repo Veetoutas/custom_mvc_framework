@@ -8,7 +8,8 @@ class Controller {
     public function model($model) {
         // Require model file
         require_once ROOT_DIR . '/app/models/' . $model . '.php';
-        return new $model();
+        $object = new $model;
+        return $object;
     }
 
         // Load view

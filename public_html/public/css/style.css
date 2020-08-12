@@ -6,3 +6,11 @@ body {
     color: white;
     opacity: 0.95;
 }
+
+#header  {
+    color: orange;
+}
+
+#footer {
+    color: orange;
+}

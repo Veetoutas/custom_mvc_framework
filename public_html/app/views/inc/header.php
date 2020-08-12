@@ -13,8 +13,10 @@
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>
-<?php
-    echo '<br>';
-    echo 'Header';
-    echo '<br>';
-?>
+    <div id="header">
+        <?php
+        echo '<br>';
+        echo 'Header';
+        echo '<br>';
+        ?>
+    </div>
